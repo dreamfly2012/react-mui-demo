@@ -14,7 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import {useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props
@@ -27,36 +27,29 @@ const ExpandMore = styled((props) => {
   }),
 }))
 
-
-
 const defaultProps = {
-    id:1
+  id: 1,
 }
 
-export function Detail({id=defaultProps.id}) {
+export function Detail({ id = defaultProps.id }) {
+  const [movie, setMovie] = useState([])
 
+  useEffect(() => {
+    // GET request using fetch inside useEffect React hook
+    fetch(
+      'https://www.fastmock.site/mock/a41c7665b83276cbd94cc1e44a35fa6c/movie/detai/' +
+        id
+    )
+      .then((response) => response.json())
+      .then((data) => setMovie(data.data))
 
-    const [movie, setMovie] = useState([])
-
-    useEffect(() => {
-      // GET request using fetch inside useEffect React hook
-      fetch(
-        'https://www.fastmock.site/mock/a41c7665b83276cbd94cc1e44a35fa6c/movie/detai/' +
-          id
-      )
-        .then((response) => response.json())
-        .then((data) => setMovie(data.data))
-  
-
-      // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    }, [])
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, [])
   const [expanded, setExpanded] = React.useState(false)
 
   const handleExpandClick = () => {
     setExpanded(!expanded)
   }
-
-
 
   return (
     <Card sx={{ maxWidth: 345 }}>

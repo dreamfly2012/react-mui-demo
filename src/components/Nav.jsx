@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Index, About, Detail } from '../containers'
+import { Index, About, Detail, Favour } from '../containers'
 
 export function Nav(){
     return (
@@ -7,6 +7,7 @@ export function Nav(){
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About/>} />
+          <Route path="/favour" element={<Favour/>}/>
           <Route path="/detail" element={<Detail/>} />
         </Routes>
     

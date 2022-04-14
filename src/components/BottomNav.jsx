@@ -5,20 +5,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import PersonPinIcon from '@mui/icons-material/PersonPin'
 import { Link } from 'react-router-dom'
 
-
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 
-
 import { Index, About } from '../containers'
 
-
-
-
 export default function BottomNav() {
- 
-
-    const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
 
   return (
     <Paper
@@ -54,5 +47,4 @@ export default function BottomNav() {
       </BottomNavigation>
     </Paper>
   )
-  
 }

@@ -1,0 +1,23 @@
+.footer{
+    position: relative;
+    background: #49b1f5;
+    background-attachment: local;
+    background-position: bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+#footer-wrap {
+    position: relative;
+    padding: 2rem 1rem;
+    color: var(--light-grey);
+    text-align: center;
+}
+img {
+    max-width: 100%;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
